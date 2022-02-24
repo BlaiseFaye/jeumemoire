@@ -1,42 +1,27 @@
-# 420-W12-SU - Programmation Web 2
+#memory game
+Le jeu consiste à trouver 3 paires
+d'images en un temps record.
 
-## Installation
 
-Créer le dépôt GIT vide (pas de README ou .gitignore à la racine) **programmation-web-2** sur [bitbucket](https://bitbucket.org/) en utilisant le courriel de l'école.
+#fonctions
+À chaque nouvelle partie:
+1. On réinitialise la position des images aléatoirement.
+2. Toutes les images cachées sont affichées un laps de temps puis recouvertes;
+3. Le nombre de paires trouvées est remis à zéro ainsi que le temps écoulé.
+4. Le bouton affichant "Arrêter la partie" affiche maintenant le message initial "Nouvelle partie"
 
-Ajouter les droits en lecture pour votre professeur: martin.vachon@isi-mtl.com
+À la fin de chaque partie:
+1. Un message de félicitations est affiché donnant le temps écoulé (dans une fenêtre);
+2. Le Meilleur temps est vérifié.
+3. De ce fait dans une fenêtre, un message est affiché si le meilleur temps est battu.
 
-Cloner votre dépôt GIT dans le répertoire /vsc-workspace de façon à obtenir la structure suivante:
-
-```
-/vsc-workspace
-    programmation-web/                  --> 420-D08-SU HTML / CSS
-    programmation-web-1/                --> 420-W10-SU HTML5 / CSS3
-    programmation-web-2/                --> 420-W11-SU JavaScript
-    programmation-web-3/                --> 420-W12-SU PHP
-    structure-logicielle/               --> 420-W13-SU JavaScript / NodeJs / React
-```
-
-***Ajouter la référence au cours:***
-
-`git remote add upstream https://VOTRE NOM D'USAGER BITBUCKET@bitbucket.org/isiteachers/programmation-web-2_e21.git`
-
-- Note 1: Votre nom d'usager bitbucket est visible en consultant votre profil (icône au bas gauche de l'écran)
-- Note 2: Si la commande contient des erreurs, la prochaine opération (Importer le cours dans votre repository) ne fonctionnera pas. Pour corriger la situation, utiliser la commande: `git remote rm upstream` et re-exécuter la commande précédente sans erreur.
-
-***Importer le cours dans votre repository:***
-
-`git pull upstream master --allow-unrelated-histories`
-
-## Installer les dépendances
-
-La première fois seulement vous devez installer les dépendances:
-
-`npm install`
-
-## Utiliser le upstream (repository du professeur)
-
-Importer les mises à jour du cours ou les nouveaux exercices:
-
-`git pull upstream master`
+Durant la partie:
+1. L'utilisateur clique sur deux images;
+2. Les images s'affichent un laps de temps;
+3. Si les images sont différentes, elles sont cachées de nouveau, sinon elles restent affichées et on
+incrémente le nombre de paires trouvées.
+4. Durant ce temps, le nombre de secondes écoulées depuis le début de la partie courante
+s'accumule;
+5. Le bouton affichant initialement "Nouvelle partie" doit afficher "Arrêter la partie"
+6. La fin d'une partie est atteinte lorsque toutes les paires sont découvertes.
 
